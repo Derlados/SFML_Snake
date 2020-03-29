@@ -3,7 +3,7 @@
 const int MAP_HEIGHT = 12;
 const int MAP_WIDTH = 22;
 
-//Øàáëîí êàðòû
+//Ð¨Ð°Ð±Ð»Ð¾Ð½ ÐºÐ°Ñ€Ñ‚Ñ‹
 std::string mapTemplate[MAP_HEIGHT] = {
 	"0000000000000000000000",
 	"0                    0",
@@ -19,14 +19,17 @@ std::string mapTemplate[MAP_HEIGHT] = {
 	"0000000000000000000000"
 };
 
-//Èñïîëüçóåìàÿ êàðòà
+//Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÐ¼Ð°Ñ ÐºÐ°Ñ€Ñ‚Ð°
 std::string Map[MAP_HEIGHT];
 
-//Ñîçäàíèå êàðòû êîòîðàÿ áóäåò èñïîëüçîâàòüñÿ
+//Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ ÐºÐ°Ñ€Ñ‚Ñ‹ ÐºÐ¾Ñ‚Ð¾Ñ€Ð°Ñ Ð±ÑƒÐ´ÐµÑ‚ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒÑÑ
 void createMap()
 {
 	int i, j;
+
+	Map->clear();
+
 	for (i = 0; i < MAP_HEIGHT; ++i)
 		for (j = 0; j < MAP_WIDTH; ++j)
-			Map[i][j] = mapTemplate[i][j];
+			Map[i].push_back(mapTemplate[i][j]);
 }
